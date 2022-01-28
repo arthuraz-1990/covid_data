@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  covid_db:
+    container_name: covid_db
+    restart: unless-stopped
+    build: 
+      context: ./data
+    ports: 
+      - "35432:5432"
+    env_file: 
+      - ./data/.env
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
