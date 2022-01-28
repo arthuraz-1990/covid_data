@@ -3,6 +3,7 @@ package com.api.covid.analyze.model;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,16 +14,18 @@ import javax.persistence.Table;
 public class CovidInfo implements Serializable {
     
     @Id
-    private Long id;
+    private Integer id;
     private String city;
     private int cityIbgeCode;
     private Date dateInfo;
     private int epidemiologicalWeek;
     private int estimatedPopulation;
+    @Column(name = "estimated_population_2019")
     private int estimatedPopulation2019;
     private boolean isLast;
     private boolean isRepeated;
     private int lastAvailableConfirmed;
+    @Column(name = "last_available_confirmed_per_100k_inhabitants")
     private double lastAvailableConfirmedPer100kInhabitants;
     private Date lastAvailableDate;
     private double lastAvailableDeathRate;
@@ -33,11 +36,11 @@ public class CovidInfo implements Serializable {
     private int newConfirmed;
     private int newDeaths;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     
