@@ -1,0 +1,25 @@
+spring:
+    datasource:
+        username: postgres
+        password: postgres
+        url: jdbc:postgresql://localhost:35432/covid_data
+    jpa:
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQL9Dialect
+                jdbc.lob.non_contextual_creation: true
+        hibernate.ddl-auto: validate
+    http:
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+        
+    
+logging:
+    level:
+        org:
+            springframework.security: DEBUG
+            hibernate:
+                SQL: DEBUG
+                type.descriptor.sql.BasicBinder: TRACE

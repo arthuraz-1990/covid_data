@@ -1,4 +1,5 @@
 CREATE TABLE casos_full (
+	id serial PRIMARY KEY NOT NULL,
 	city text,
 	city_ibge_code integer,
 	date_info date,
