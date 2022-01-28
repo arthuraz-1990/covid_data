@@ -1,13 +1,14 @@
 package com.api.covid.analyze.model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "casos_full")
@@ -17,6 +18,7 @@ public class CovidInfo implements Serializable {
     private Integer id;
     private String city;
     private int cityIbgeCode;
+    @Temporal(TemporalType.DATE)
     private Date dateInfo;
     private int epidemiologicalWeek;
     private int estimatedPopulation;
@@ -27,6 +29,7 @@ public class CovidInfo implements Serializable {
     private int lastAvailableConfirmed;
     @Column(name = "last_available_confirmed_per_100k_inhabitants")
     private double lastAvailableConfirmedPer100kInhabitants;
+    @Temporal(TemporalType.DATE)
     private Date lastAvailableDate;
     private double lastAvailableDeathRate;
     private int lastAvailableDeaths;
